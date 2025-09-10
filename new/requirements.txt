@@ -1,0 +1,12 @@
+fastapi==0.95.2
+uvicorn[standard]==0.22.0
+pydantic==1.10.11
+python-dotenv==1.0.0
+openai==1.29.0
+supabase==0.8.1
+loguru==0.7.0
+python-jose==3.3.0
+pytest==7.4.0
+pytest-asyncio==0.22.0
+asynctest==0.13.0
+httpx==0.24.0
