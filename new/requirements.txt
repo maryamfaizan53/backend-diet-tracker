@@ -22,3 +22,4 @@ slowapi==0.1.9
 structlog==23.2.0
 pytest
 pytest-asyncio
+loguru>=0.7.0
