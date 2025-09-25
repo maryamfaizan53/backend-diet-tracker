@@ -1,0 +1,24 @@
+# railway.toml - friendly project descriptor (example)
+[project]
+name = "health-ai-backend"
+
+[service.web]
+path = "."
+# Use the Dockerfile present in the repo
+dockerfile = "Dockerfile"
+
+# start command uses $PORT provided by Railway
+start = "sh -c \"uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000} --loop asyncio\""
+
+[service.web.health_check]
+path = "/health"
+interval_seconds = 30
+timeout_seconds = 3
+
+[service.web.env]
+PORT = "8000"
+LOG_LEVEL = "INFO"
+# Put sensitive values in Railway variables; keep these blank or remove before committing
+SUPABASE_URL = "https://wkjvsqozzbbucpzbcvqy.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndranZzcW96emJidWNwemJjdnF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg2NTI2MzEsImV4cCI6MjA3NDIyODYzMX0.7w_Yq3LlfqjFUGVyTVw4muNHCXeIVg78NgxOqARNvUA"
+STRIPE_SECRET_KEY = ""
