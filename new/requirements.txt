@@ -29,7 +29,7 @@ httpx>=0.24.0
 asynctest>=0.13.0
 aioredis>=2.0.0
 redis>=4.5.1
-rq>=1.13.0
+rq
 rq-scheduler
 celery>=5.4.0
 boto3>=1.28.0
