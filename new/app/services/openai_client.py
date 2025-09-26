@@ -34,16 +34,16 @@
 #     except Exception as e:
 #         logger.exception("OpenAI streaming error")
 #         raise
+
+
 import asyncio
 import logging
 from typing import AsyncGenerator, Dict, Any, List
 from openai import AsyncOpenAI
 from tenacity import retry, stop_after_attempt, wait_exponential
 from pydantic import BaseModel
-import structlog
 import os
-
-logger = structlog.get_logger()
+from loguru import logger
 
 class Tool(BaseModel):
     type: str = "function"
